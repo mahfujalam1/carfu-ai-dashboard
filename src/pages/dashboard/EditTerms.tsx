@@ -1,12 +1,12 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, Bold, Italic, Underline, Link as LinkIcon, List, ListOrdered, Type, Save } from 'lucide-react';
+import { Bold, Italic, Underline, Link as LinkIcon, List, ListOrdered, Type, Save } from 'lucide-react';
 
 const EditTermsPage = () => {
   const navigate = useNavigate();
   const editorRef = useRef<HTMLDivElement>(null);
-  const [content, setContent] = useState(`
+  const [content] = useState(`
     <h2>Terms & Conditions</h2>
     <p>By using our services, you agree to these terms.</p>
   `);

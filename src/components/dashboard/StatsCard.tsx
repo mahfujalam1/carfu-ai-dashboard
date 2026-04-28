@@ -9,7 +9,7 @@ interface StatsCardProps {
   className?: string;
 }
 
-const StatsCard = ({ title, value, icon, className }: StatsCardProps) => {
+const StatsCard = ({ title, value, className }: StatsCardProps) => {
   return (
     <Card className={cn("bg-[#1A1C1E] border-none text-white rounded-lg", className)}>
       <CardContent className="p-8">

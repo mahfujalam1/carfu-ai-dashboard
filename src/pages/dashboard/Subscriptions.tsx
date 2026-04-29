@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, Eye } from 'lucide-react';
+import { Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import DataTable from '@/components/shared/DataTable';
 import SubscriptionModal from '@/components/modals/SubscriptionModal';

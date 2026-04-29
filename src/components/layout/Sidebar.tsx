@@ -7,7 +7,8 @@ import {
   History,
   MessageSquare,
   FileText,
-  LogOut
+  LogOut,
+  X
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -24,9 +25,10 @@ const navItems = [
 
 interface SidebarProps {
   isMobile?: boolean;
+  onClose?: () => void;
 }
 
-const Sidebar = ({ isMobile }: SidebarProps) => {
+const Sidebar = ({ isMobile, onClose }: SidebarProps) => {
   const handleLogout = () => {
     localStorage.removeItem('isAuthenticated');
     window.location.href = '/login';
@@ -37,8 +39,13 @@ const Sidebar = ({ isMobile }: SidebarProps) => {
       "w-64 bg-[#1A1C1E] text-gray-400 flex flex-col h-screen border-r border-gray-800 transition-all duration-300",
       !isMobile && "hidden lg:flex fixed left-0 top-0"
     )}>
-      <div className="p-8 flex items-center gap-2">
+      <div className="p-8 flex items-center justify-between gap-2">
         <h1 className="text-xl font-bold text-white tracking-tight">Carfu AI</h1>
+        {isMobile && onClose && (
+          <Button variant="ghost" size="icon" onClick={onClose} className="text-gray-400 hover:text-white">
+            <X className="w-5 h-5" />
+          </Button>
+        )}
       </div>
 
       <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto custom-scrollbar">
@@ -46,6 +53,7 @@ const Sidebar = ({ isMobile }: SidebarProps) => {
           <NavLink
             key={item.path}
             to={item.path}
+            onClick={onClose}
             className={({ isActive }) =>
               cn(
                 "flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group",

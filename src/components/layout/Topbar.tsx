@@ -21,6 +21,7 @@ const INITIAL_NOTIFICATIONS = [
 
 const Topbar = () => {
   const [notifications, setNotifications] = useState(INITIAL_NOTIFICATIONS);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const hasUnread = notifications.some(n => !n.read);
 
   const markAllAsRead = () => {
@@ -30,7 +31,7 @@ const Topbar = () => {
   return (
     <header className="h-20 flex items-center justify-between px-4 md:px-8 bg-[#121417] border-b border-gray-800 sticky top-0 z-20">
       <div className="flex items-center gap-4">
-        <Sheet>
+        <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="lg:hidden text-gray-400">
               <Menu className="w-6 h-6" />
@@ -38,7 +39,7 @@ const Topbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className="p-0 border-none bg-transparent">
             <div className="w-64 h-full">
-              <Sidebar isMobile />
+              <Sidebar isMobile onClose={() => setIsSidebarOpen(false)} />
             </div>
           </SheetContent>
         </Sheet>

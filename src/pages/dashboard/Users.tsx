@@ -16,16 +16,16 @@ import {
 import { cn } from '@/lib/utils';
 
 const INITIAL_USERS: User[] = [
-  { id: '1', name: 'Marvin McKinney', email: 'jackson.graham@example.com', dob: '21 Sep, 2020', subscription: 'Basic', totalGenerated: 100, totalHours: '10h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
-  { id: '2', name: 'Cameron Williamson', email: 'alma.lawson@example.com', dob: '1 Feb, 2020', subscription: 'Pro', totalGenerated: 200, totalHours: '1h', accountCreated: 'Dec 7, 2019 23:26', status: 'Blocked' },
-  { id: '3', name: 'Brooklyn Simmons', email: 'deanna.curtis@example.com', dob: '1 Feb, 2020', subscription: 'Basic', totalGenerated: 20, totalHours: '8h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
-  { id: '4', name: 'Albert Flores', email: 'debbie.baker@example.com', dob: '17 Oct, 2020', subscription: 'Basic', totalGenerated: 50, totalHours: '11h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
-  { id: '5', name: 'Eleanor Pena', email: 'tanya.hill@example.com', dob: '17 Oct, 2020', subscription: 'Free', totalGenerated: 10, totalHours: '6h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
-  { id: '6', name: 'Ralph Edwards', email: 'michelle.rivera@example.com', dob: '24 May, 2020', subscription: 'Basic', totalGenerated: 100, totalHours: '8h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
-  { id: '7', name: 'Darrell Steward', email: 'tim.jennings@example.com', dob: '24 May, 2020', subscription: 'Pro', totalGenerated: 350, totalHours: '12h', accountCreated: 'Dec 7, 2019 23:26', status: 'Active' },
-  { id: '8', name: 'Bessie Cooper', email: 'willie.jennings@example.com', dob: '8 Sep, 2020', subscription: 'Pro', totalGenerated: 500, totalHours: '7h', accountCreated: 'Dec 7, 2019 23:26', status: 'Active' },
-  { id: '9', name: 'Cody Fisher', email: 'nevaeh.simmons@example.com', dob: '1 Feb, 2020', subscription: 'Pro', totalGenerated: 400, totalHours: '10h', accountCreated: 'Dec 7, 2019 23:28', status: 'Active' },
-  { id: '10', name: 'Courtney Henry', email: 'georgia.young@example.com', dob: '22 Oct, 2020', subscription: 'Pro', totalGenerated: 550, totalHours: '8h', accountCreated: 'Dec 7, 2019 23:26', status: 'Active' },
+  { id: '1', name: 'Marvin McKinney', email: 'jackson.graham@example.com', subscription: 'Basic', totalGenerated: 100, totalHours: '10h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
+  { id: '2', name: 'Cameron Williamson', email: 'alma.lawson@example.com', subscription: 'Pro', totalGenerated: 200, totalHours: '1h', accountCreated: 'Dec 7, 2019 23:26', status: 'Blocked' },
+  { id: '3', name: 'Brooklyn Simmons', email: 'deanna.curtis@example.com', subscription: 'Basic', totalGenerated: 20, totalHours: '8h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
+  { id: '4', name: 'Albert Flores', email: 'debbie.baker@example.com', subscription: 'Basic', totalGenerated: 50, totalHours: '11h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
+  { id: '5', name: 'Eleanor Pena', email: 'tanya.hill@example.com', subscription: 'Free', totalGenerated: 10, totalHours: '6h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
+  { id: '6', name: 'Ralph Edwards', email: 'michelle.rivera@example.com', subscription: 'Basic', totalGenerated: 100, totalHours: '8h', accountCreated: 'Dec 4, 2019 21:42', status: 'Active' },
+  { id: '7', name: 'Darrell Steward', email: 'tim.jennings@example.com', subscription: 'Pro', totalGenerated: 350, totalHours: '12h', accountCreated: 'Dec 7, 2019 23:26', status: 'Active' },
+  { id: '8', name: 'Bessie Cooper', email: 'willie.jennings@example.com', subscription: 'Pro', totalGenerated: 500, totalHours: '7h', accountCreated: 'Dec 7, 2019 23:26', status: 'Active' },
+  { id: '9', name: 'Cody Fisher', email: 'nevaeh.simmons@example.com', subscription: 'Pro', totalGenerated: 400, totalHours: '10h', accountCreated: 'Dec 7, 2019 23:28', status: 'Active' },
+  { id: '10', name: 'Courtney Henry', email: 'georgia.young@example.com', subscription: 'Pro', totalGenerated: 550, totalHours: '8h', accountCreated: 'Dec 7, 2019 23:26', status: 'Active' },
 ];
 
 const UsersPage = () => {
@@ -95,15 +95,6 @@ const UsersPage = () => {
       ), 
       accessorKey: 'email',
       cell: (user: User) => <span className="text-gray-400">{user.email}</span>
-    },
-    { 
-      header: (
-        <div className="flex items-center gap-1">
-          Date of Birth <ArrowUpDown className="w-3 h-3" />
-        </div>
-      ), 
-      accessorKey: 'dob',
-      cell: (user: User) => <span className="text-gray-400">{user.dob}</span>
     },
     {
       header: (

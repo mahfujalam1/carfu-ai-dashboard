@@ -2,7 +2,6 @@ export interface User {
   id: string;
   name: string;
   email: string;
-  dob: string;
   subscription: 'Basic' | 'Pro' | 'Free';
   totalGenerated: number;
   totalHours: string;
@@ -15,7 +14,6 @@ export interface IncompleteUser {
   id: string;
   name: string;
   email: string;
-  dob: string;
   accountCreated: string;
   avatar?: string;
 }

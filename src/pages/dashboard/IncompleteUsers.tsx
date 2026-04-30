@@ -15,14 +15,14 @@ import {
 import { cn } from '@/lib/utils';
 
 const INITIAL_INCOMPLETE_USERS: IncompleteUser[] = [
-  { id: '1', name: 'Marvin McKinney', email: 'jackson.graham@example.com', dob: '21 Sep, 2020', accountCreated: 'Dec 4, 2019 21:42' },
-  { id: '2', name: 'Cameron Williamson', email: 'alma.lawson@example.com', dob: '1 Feb, 2020', accountCreated: 'Dec 7, 2019 23:26' },
-  { id: '3', name: 'Brooklyn Simmons', email: 'deanna.curtis@example.com', dob: '1 Feb, 2020', accountCreated: 'Dec 4, 2019 21:42' },
-  { id: '4', name: 'Albert Flores', email: 'debbie.baker@example.com', dob: '17 Oct, 2020', accountCreated: 'Dec 4, 2019 21:42' },
-  { id: '5', name: 'Eleanor Pena', email: 'tanya.hill@example.com', dob: '17 Oct, 2020', accountCreated: 'Dec 4, 2019 21:42' },
-  { id: '6', name: 'Ralph Edwards', email: 'michelle.rivera@example.com', dob: '24 May, 2020', accountCreated: 'Dec 4, 2019 21:42' },
-  { id: '7', name: 'Darrell Steward', email: 'tim.jennings@example.com', dob: '24 May, 2020', accountCreated: 'Dec 7, 2019 23:26' },
-  { id: '8', name: 'Bessie Cooper', email: 'willie.jennings@example.com', dob: '8 Sep, 2020', accountCreated: 'Dec 7, 2019 23:26' },
+  { id: '1', name: 'Marvin McKinney', email: 'jackson.graham@example.com', accountCreated: 'Dec 4, 2019 21:42' },
+  { id: '2', name: 'Cameron Williamson', email: 'alma.lawson@example.com', accountCreated: 'Dec 7, 2019 23:26' },
+  { id: '3', name: 'Brooklyn Simmons', email: 'deanna.curtis@example.com', accountCreated: 'Dec 4, 2019 21:42' },
+  { id: '4', name: 'Albert Flores', email: 'debbie.baker@example.com', accountCreated: 'Dec 4, 2019 21:42' },
+  { id: '5', name: 'Eleanor Pena', email: 'tanya.hill@example.com', accountCreated: 'Dec 4, 2019 21:42' },
+  { id: '6', name: 'Ralph Edwards', email: 'michelle.rivera@example.com', accountCreated: 'Dec 4, 2019 21:42' },
+  { id: '7', name: 'Darrell Steward', email: 'tim.jennings@example.com', accountCreated: 'Dec 7, 2019 23:26' },
+  { id: '8', name: 'Bessie Cooper', email: 'willie.jennings@example.com', accountCreated: 'Dec 7, 2019 23:26' },
 ];
 
 const IncompleteUsersPage = () => {
@@ -82,15 +82,6 @@ const IncompleteUsersPage = () => {
       ), 
       accessorKey: 'email',
       cell: (user: IncompleteUser) => <span className="text-gray-400">{user.email}</span>
-    },
-    { 
-      header: (
-        <div className="flex items-center gap-1">
-          Date of Birth <ArrowUpDown className="w-3 h-3" />
-        </div>
-      ), 
-      accessorKey: 'dob',
-      cell: (user: IncompleteUser) => <span className="text-gray-400">{user.dob}</span>
     },
     { 
       header: (
